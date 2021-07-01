@@ -1,9 +1,13 @@
 const express = require('express');
-const app = express(); 
+const app = express();
+const connectDB = require('./config/db');
 
 app.get('/', (req, res) => {
   res.json({ msg: 'Welcome Conctact Keeper...' });
 })
+
+//Connect DataBase
+connectDB()
 
 //Define Routes
 app.use('/api/users', require('./routes/users'));
