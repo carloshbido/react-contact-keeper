@@ -43,13 +43,11 @@ async (req, res) => {
     try {
 
         let user = await User.findOne({ email });
-
         if(!user){
             return res.status(404).json({msg: 'Invalid Credentials'});
         }
 
         const isMath = await bcrypt.compare(password, user.password);
-
         if(!isMath) {
             return res.status(404).json({ msg: 'Invalid Credentials'});
         }
