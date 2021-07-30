@@ -6,9 +6,11 @@ import Navbar from './components/layout/Navbar';
 import './App.css';
 
 import ContactState from './context/contact/ContactState';
+import AuthState from './context/contact/AuthState';
 
 function App() {
   return (
+    <AuthState>
     <ContactState>
       <Router>
         <Fragment> 
@@ -22,6 +24,7 @@ function App() {
         </Fragment>
       </Router>
     </ContactState>
+    </AuthState>
   );
 }
 

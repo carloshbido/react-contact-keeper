@@ -92,8 +92,7 @@ const [state, dispatch] = useReducer(ContactReducer, initialState);
         updateContact,
         filterContacts,
         clearFilter
-      }}
-    >
+      }}>
       { props.children }
     </ContactContext.Provider>
   ) 
