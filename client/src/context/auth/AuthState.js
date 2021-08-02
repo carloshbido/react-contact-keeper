@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import AuthContext from './authContext';
-import AuthReducer from './authReducer';
+import authReducer from './authReducer';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -18,12 +18,13 @@ const AuthState = props => {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     loading: true,
+    user: null,
     error: null
   }
 
-const [state, dispatch] = authReducer(ContactReducer, initialState);
+const [state, dispatch] = useReducer(authReducer, initialState);
 
-  //Load User
+  // Load User
 
   // Register User
 
