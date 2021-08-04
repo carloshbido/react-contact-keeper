@@ -6,19 +6,23 @@ import About from './components/pages/About';
 import Navbar from './components/layout/Navbar';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Alerts from './components/layout/Alerts';
 import './App.css';
 
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
+import AlertState from './context/alert/AlertState';
 
 function App() {
   return (
     <AuthState>
     <ContactState>
+    <AlertState>
       <Router>
         <Fragment> 
           <Navbar /> 
           <div class="container">
+            <Alerts/>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
@@ -28,6 +32,7 @@ function App() {
           </div>
         </Fragment>
       </Router>
+    </AlertState>
     </ContactState>
     </AuthState>
   );
